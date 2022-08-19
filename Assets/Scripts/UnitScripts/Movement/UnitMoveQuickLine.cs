@@ -47,7 +47,6 @@ public class UnitMoveQuickLine : MonoBehaviour
         if (rightMouseStopwatch >= 0.5 && selectedUnitList.Count > 1 && Mathf.Sqrt(Mathf.Pow(initialRightClick.x - Camera.main.ScreenToWorldPoint(Input.mousePosition).x, 2) +
             Mathf.Pow(initialRightClick.y - Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 2)) >= quickLineFormationGridThreshold)
         {
-            Debug.Log(quickLineFormationActive);
             GetComponent<UnitManager>().formationActive = false;
             quickLineFormationActive = true;
             QuickLineSpacingPreview(selectedUnitList, initialRightClick);

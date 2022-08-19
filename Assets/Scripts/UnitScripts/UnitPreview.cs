@@ -5,9 +5,12 @@ using UnityEngine;
 public class UnitPreview : MonoBehaviour
 {
     public GameObject previewGameObject;
+    private SpriteRenderer spriteR;
 
-    void Awake()
+    void Start()
     {
+        spriteR = this.transform.GetChild(1).GetComponent<SpriteRenderer>();
+        spriteR.sprite = GetComponent<BaseUnitPrefab>().unitObject.sprite;
         previewGameObject = transform.Find("Preview").gameObject;
         SetPreviewVisible(false);
     }
